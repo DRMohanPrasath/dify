@@ -5,11 +5,11 @@
 # ==================================================================
 
 x-shared-env: &shared-api-worker-env
-  CONSOLE_API_URL: ${CONSOLE_API_URL:-}
-  CONSOLE_WEB_URL: ${CONSOLE_WEB_URL:-}
-  SERVICE_API_URL: ${SERVICE_API_URL:-}
-  APP_API_URL: ${APP_API_URL:-}
-  APP_WEB_URL: ${APP_WEB_URL:-}
+  CONSOLE_API_URL: http://dify.console.api.152.67.167.69:8000
+  CONSOLE_WEB_URL: http://dify.console.152.67.167.69:8000
+  SERVICE_API_URL: http://dify.api.152.67.167.69:8000
+  APP_API_URL: http://dify.api.api.152.67.167.69:8000
+  APP_WEB_URL: http://dify.152.67.167.69:8000
   FILES_URL: ${FILES_URL:-}
   LOG_LEVEL: ${LOG_LEVEL:-INFO}
   LOG_FILE: ${LOG_FILE:-/app/logs/server.log}
@@ -20,7 +20,7 @@ x-shared-env: &shared-api-worker-env
   DEBUG: ${DEBUG:-false}
   FLASK_DEBUG: ${FLASK_DEBUG:-false}
   SECRET_KEY: ${SECRET_KEY:-sk-9f73s3ljTXVcMT3Blb3ljTqtsKiGHXVcMT3BlbkFJLK7U}
-  INIT_PASSWORD: ${INIT_PASSWORD:-}
+  INIT_PASSWORD: Password123$
   DEPLOY_ENV: ${DEPLOY_ENV:-PRODUCTION}
   CHECK_UPDATE_URL: ${CHECK_UPDATE_URL:-https://updates.dify.ai}
   OPENAI_API_BASE: ${OPENAI_API_BASE:-https://api.openai.com/v1}
@@ -76,8 +76,8 @@ x-shared-env: &shared-api-worker-env
   CELERY_USE_SENTINEL: ${CELERY_USE_SENTINEL:-false}
   CELERY_SENTINEL_MASTER_NAME: ${CELERY_SENTINEL_MASTER_NAME:-}
   CELERY_SENTINEL_SOCKET_TIMEOUT: ${CELERY_SENTINEL_SOCKET_TIMEOUT:-0.1}
-  WEB_API_CORS_ALLOW_ORIGINS: ${WEB_API_CORS_ALLOW_ORIGINS:-*}
-  CONSOLE_CORS_ALLOW_ORIGINS: ${CONSOLE_CORS_ALLOW_ORIGINS:-*}
+  WEB_API_CORS_ALLOW_ORIGINS: http://dify.152.67.167.69:8000
+  CONSOLE_CORS_ALLOW_ORIGINS: http://dify.console.152.67.167.69:8000
   STORAGE_TYPE: ${STORAGE_TYPE:-opendal}
   OPENDAL_SCHEME: ${OPENDAL_SCHEME:-fs}
   OPENDAL_FS_ROOT: ${OPENDAL_FS_ROOT:-storage}
